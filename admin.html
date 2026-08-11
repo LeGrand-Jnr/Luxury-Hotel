@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Dashboard – Luxury Hotel</title>
+  <title>Staff Login – Luxury Hotel</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -17,69 +17,101 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="reservations.html">Reservations</a></li>
-        <li><a href="admin.html">Admin</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </nav>
   </header>
 
-  <section class="admin-section">
-    <h2>Manage Reservations</h2>
-    <div class="admin-table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Guest Name</th>
-            <th>Email</th>
-            <th>Check-in</th>
-            <th>Check-out</th>
-            <th>Room Type</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Jane Doe</td>
-            <td>jane@example.com</td>
-            <td>2025-08-15</td>
-            <td>2025-08-18</td>
-            <td>Deluxe</td>
-            <td>Pending</td>
-            <td>
-              <button class="action-button">Confirm</button>
-              <button class="action-button">Edit</button>
-              <button class="action-button danger">Cancel</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Kwame Mensah</td>
-            <td>kwame@example.com</td>
-            <td>2025-09-01</td>
-            <td>2025-09-03</td>
-            <td>Suite</td>
-            <td>Confirmed</td>
-            <td>
-              <button class="action-button">Confirm</button>
-              <button class="action-button">Edit</button>
-              <button class="action-button danger">Cancel</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Linda Smith</td>
-            <td>linda@example.com</td>
-            <td>2025-10-02</td>
-            <td>2025-10-06</td>
-            <td>Standard</td>
-            <td>Pending</td>
-            <td>
-              <button class="action-button">Confirm</button>
-              <button class="action-button">Edit</button>
-              <button class="action-button danger">Cancel</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+  <section class="admin-login-section">
+    <div class="admin-login-wrap">
+      <div class="admin-login-panel" id="adminLoginPanel">
+        <div class="admin-login-header">
+          <div class="admin-logo-badge">LH</div>
+          <div>
+            <p class="eyebrow">Private Staff Portal</p>
+            <h1>Staff Access</h1>
+          </div>
+        </div>
+
+        <form class="admin-login-form" id="adminLoginForm">
+          <label for="staffEmail">Staff Email</label>
+          <input id="staffEmail" type="email" placeholder="staff@luxuryhotel.com" required />
+
+          <label for="staffPassword">Password</label>
+          <input id="staffPassword" type="password" placeholder="Password" required />
+
+          <button type="submit" class="admin-login-button">Enter Dashboard</button>
+          <div class="admin-login-error" id="adminLoginError"></div>
+        </form>
+      </div>
+
+      <section class="admin-dashboard" id="adminDashboard" hidden>
+        <div class="admin-dashboard-top">
+          <div>
+            <p class="eyebrow">Luxury Hotel</p>
+            <h1>Reservation Dashboard</h1>
+          </div>
+          <button class="logout-button" id="adminLogout">Log out</button>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Guest Name</th>
+                <th>Email</th>
+                <th>Check-in</th>
+                <th>Check-out</th>
+                <th>Room Type</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jane Doe</td>
+                <td>jane@example.com</td>
+                <td>2025-08-15</td>
+                <td>2025-08-18</td>
+                <td>Deluxe</td>
+                <td>Pending</td>
+                <td>
+                  <button class="action-button">Confirm</button>
+                  <button class="action-button">Edit</button>
+                  <button class="action-button danger">Cancel</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Kwame Mensah</td>
+                <td>kwame@example.com</td>
+                <td>2025-09-01</td>
+                <td>2025-09-03</td>
+                <td>Suite</td>
+                <td>Confirmed</td>
+                <td>
+                  <button class="action-button">Confirm</button>
+                  <button class="action-button">Edit</button>
+                  <button class="action-button danger">Cancel</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Linda Smith</td>
+                <td>linda@example.com</td>
+                <td>2025-10-02</td>
+                <td>2025-10-06</td>
+                <td>Standard</td>
+                <td>Pending</td>
+                <td>
+                  <button class="action-button">Confirm</button>
+                  <button class="action-button">Edit</button>
+                  <button class="action-button danger">Cancel</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   </section>
 

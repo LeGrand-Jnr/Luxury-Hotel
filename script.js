@@ -100,3 +100,56 @@ if (scrollBtn) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 }
+
+// Staff login handler
+const adminLoginForm = document.getElementById('adminLoginForm');
+const adminLoginPanel = document.getElementById('adminLoginPanel');
+const adminDashboard = document.getElementById('adminDashboard');
+const adminLogout = document.getElementById('adminLogout');
+const adminLoginError = document.getElementById('adminLoginError');
+
+if (adminLoginForm && adminLoginPanel && adminDashboard) {
+  const isAuthenticated = sessionStorage.getItem('luxuryHotelStaffAuth') === 'true';
+
+  if (isAuthenticated) {
+    adminLoginPanel.style.display = 'none';
+    adminDashboard.hidden = false;
+  }
+
+  adminLoginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('staffEmail')?.value.trim().toLowerCase();
+    const password = document.getElementById('staffPassword')?.value.trim();
+
+    if (email === 'staff@luxuryhotel.com' && password === 'staff123') {
+      sessionStorage.setItem('luxuryHotelStaffAuth', 'true');
+      adminLoginPanel.style.display = 'none';
+      adminDashboard.hidden = false;
+    } else {
+      if (adminLoginError) {
+        adminLoginError.textContent = 'Invalid staff email or password.';
+        adminLoginError.classList.add('show');
+      }
+    }
+  });
+}
+
+if (adminLogout) {
+  adminLogout.addEventListener('click', function() {
+    sessionStorage.removeItem('luxuryHotelStaffAuth');
+
+    if (adminLoginPanel) {
+      adminLoginPanel.style.display = 'block';
+    }
+
+    if (adminDashboard) {
+      adminDashboard.hidden = true;
+    }
+
+    const adminEmailField = document.getElementById('staffEmail');
+    const adminPasswordField = document.getElementById('staffPassword');
+    if (adminEmailField) adminEmailField.value = '';
+    if (adminPasswordField) adminPasswordField.value = '';
+  });
+}
