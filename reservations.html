@@ -26,41 +26,91 @@
     <h2>Make a Reservation</h2>
     <div class="reservation-wrap">
       <form class="reservation-form" id="reservationForm" method="" action="">
-        <div class="full">
-          <label for="guestName">Full Name</label>
-          <input id="guestName" type="text" placeholder="Full Name" required />
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label for="guestFirstName">First Name</label>
+            <input id="guestFirstName" type="text" placeholder="Guest first name" required />
+          </div>
+          <div class="form-group full-width">
+            <label for="guestLastName">Last Name</label>
+            <input id="guestLastName" type="text" placeholder="Guest last name" required />
+          </div>
         </div>
-        <div>
-          <label for="email">Email Address</label>
-          <input id="email" type="email" placeholder="Email" required />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="guestEmail">Email Address</label>
+            <input id="guestEmail" type="email" placeholder="guest@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="guestPhone">Phone Number</label>
+            <input id="guestPhone" type="tel" placeholder="+233 20 000 0000" required />
+          </div>
         </div>
-        <div>
-          <label for="phone">Phone Number</label>
-          <input id="phone" type="tel" placeholder="Phone" required />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="arrivalDate">Arrival Date</label>
+            <input id="arrivalDate" type="date" required />
+          </div>
+          <div class="form-group">
+            <label for="departureDate">Departure Date</label>
+            <input id="departureDate" type="date" required />
+          </div>
         </div>
-        <div>
-          <label for="checkinDate">Check-in Date</label>
-          <input id="checkinDate" type="date" required />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="guestsNumber">Number of Guests</label>
+            <input id="guestsNumber" type="number" min="1" max="12" placeholder="1" required />
+          </div>
+          <div class="form-group">
+            <label for="stayPlan">Stay Plan</label>
+            <select id="stayPlan" required>
+              <option value="">Select stay plan</option>
+              <option value="Bed & Breakfast">Bed & Breakfast</option>
+              <option value="Half Board">Half Board</option>
+              <option value="Full Board">Full Board</option>
+              <option value="Executive Suite">Executive Suite</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <label for="checkoutDate">Check-out Date</label>
-          <input id="checkoutDate" type="date" required />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="roomCategory">Room / Hall Type</label>
+            <select id="roomCategory" required>
+              <option value="">Select preferred space</option>
+              <option value="Deluxe King Room">Deluxe King Room</option>
+              <option value="Executive Suite">Executive Suite</option>
+              <option value="Garden Room">Garden Room</option>
+              <option value="Conference Hall">Conference Hall</option>
+              <option value="Dining Hall">Dining Hall</option>
+              <option value="Private Event Area">Private Event Area</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="arrivalTime">Preferred Arrival Time</label>
+            <select id="arrivalTime" required>
+              <option value="">Select arrival time</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="02:00 PM">02:00 PM</option>
+              <option value="04:00 PM">04:00 PM</option>
+              <option value="06:00 PM">06:00 PM</option>
+              <option value="08:00 PM">08:00 PM</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <label for="roomType">Room Type</label>
-          <select id="roomType" required>
-            <option value="">Select Room Type</option>
-            <option value="standard">Standard</option>
-            <option value="deluxe">Deluxe</option>
-            <option value="suite">Suite</option>
-          </select>
+
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label for="specialRequest">Special Request</label>
+            <textarea id="specialRequest" placeholder="Late check-in, room preference, dietary needs, event requirements..." rows="5"></textarea>
+          </div>
         </div>
-        <div>
-          <label for="guests">Guests</label>
-          <input id="guests" type="number" placeholder="Number of Guests" required />
-        </div>
+
         <div class="reservation-button full">
-          <button type="submit">Confirm Reservation</button>
+          <button type="submit">Request Reservation</button>
         </div>
       </form>
     </div>

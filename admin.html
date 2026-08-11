@@ -55,63 +55,155 @@
           <button class="logout-button" id="adminLogout">Log out</button>
         </div>
 
-        <div class="admin-table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Guest Name</th>
-                <th>Email</th>
-                <th>Check-in</th>
-                <th>Check-out</th>
-                <th>Room Type</th>
-                <th>Status</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Jane Doe</td>
-                <td>jane@example.com</td>
-                <td>2025-08-15</td>
-                <td>2025-08-18</td>
-                <td>Deluxe</td>
-                <td>Pending</td>
-                <td>
-                  <button class="action-button">Confirm</button>
-                  <button class="action-button">Edit</button>
-                  <button class="action-button danger">Cancel</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Kwame Mensah</td>
-                <td>kwame@example.com</td>
-                <td>2025-09-01</td>
-                <td>2025-09-03</td>
-                <td>Suite</td>
-                <td>Confirmed</td>
-                <td>
-                  <button class="action-button">Confirm</button>
-                  <button class="action-button">Edit</button>
-                  <button class="action-button danger">Cancel</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Linda Smith</td>
-                <td>linda@example.com</td>
-                <td>2025-10-02</td>
-                <td>2025-10-06</td>
-                <td>Standard</td>
-                <td>Pending</td>
-                <td>
-                  <button class="action-button">Confirm</button>
-                  <button class="action-button">Edit</button>
-                  <button class="action-button danger">Cancel</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="admin-dashboard-layout">
+          <aside class="admin-sidebar">
+            <div class="admin-nav-card active">
+              <span class="admin-nav-icon">☰</span>
+              <span>Reservations</span>
+            </div>
+            <div class="admin-nav-card">
+              <span class="admin-nav-icon">□</span>
+              <span>Rooms & Halls</span>
+            </div>
+            <div class="admin-nav-card">
+              <span class="admin-nav-icon">✉</span>
+              <span>Messages</span>
+            </div>
+          </aside>
+
+          <div class="admin-content">
+            <section class="admin-panel-block">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Guest Bookings</p>
+                  <h2>Reservations</h2>
+                </div>
+                <button class="secondary-button" id="createReservation">+ New Booking</button>
+              </div>
+
+              <div class="admin-table-wrap">
+                <table class="admin-table" id="adminReservationTable">
+                  <thead>
+                    <tr>
+                      <th>Guest</th>
+                      <th>Stay</th>
+                      <th>Room/Hall</th>
+                      <th>Plan</th>
+                      <th>Status</th>
+                      <th>Created</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reservationTableBody"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="admin-panel-block">
+              <div class="panel-header compact">
+                <div>
+                  <p class="eyebrow">Inventory</p>
+                  <h2>Rooms & Event Spaces</h2>
+                </div>
+                <button class="secondary-button" id="addRoom">+ Add Space</button>
+              </div>
+
+              <div class="room-grid" id="roomGrid"></div>
+            </section>
+
+            <section class="admin-panel-block">
+              <div class="panel-header compact">
+                <div>
+                  <p class="eyebrow">Enquiries</p>
+                  <h2>Contact Messages</h2>
+                </div>
+              </div>
+
+              <div class="message-list" id="contactMessageList"></div>
+            </section>
+          </div>
         </div>
       </section>
+
+      <div class="admin-modal" id="reservationModal" aria-hidden="true">
+        <div class="admin-modal-card">
+          <div class="modal-header">
+            <h2 id="modalTitle">Reservation Details</h2>
+            <button id="modalClose" class="icon-button" aria-label="Close">×</button>
+          </div>
+
+          <form class="admin-reservation-form" id="adminReservationForm">
+            <input type="hidden" id="reservationId" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="adminGuestName">Guest Name</label>
+                <input id="adminGuestName" type="text" required />
+              </div>
+              <div class="form-group">
+                <label for="adminGuestEmail">Email</label>
+                <input id="adminGuestEmail" type="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="adminGuestPhone">Phone</label>
+                <input id="adminGuestPhone" type="tel" required />
+              </div>
+              <div class="form-group">
+                <label for="adminStayPlan">Stay Plan</label>
+                <select id="adminStayPlan" required>
+                  <option value="Bed & Breakfast">Bed & Breakfast</option>
+                  <option value="Half Board">Half Board</option>
+                  <option value="Full Board">Full Board</option>
+                  <option value="Executive Suite">Executive Suite</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="adminArrivalDate">Arrival Date</label>
+                <input id="adminArrivalDate" type="date" required />
+              </div>
+              <div class="form-group">
+                <label for="adminDepartureDate">Departure Date</label>
+                <input id="adminDepartureDate" type="date" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="adminRoomType">Room / Hall</label>
+                <select id="adminRoomType" required></select>
+              </div>
+              <div class="form-group">
+                <label for="adminStatus">Status</label>
+                <select id="adminStatus" required>
+                  <option value="Pending">Pending</option>
+                  <option value="Confirmed">Confirmed</option>
+                  <option value="Checked In">Checked In</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="adminSpecialRequest">Special Request</label>
+                <textarea id="adminSpecialRequest" rows="4"></textarea>
+              </div>
+            </div>
+
+            <div class="modal-actions">
+              <button type="button" class="secondary-button" id="cancelModal">Cancel</button>
+              <button type="submit" class="primary-button">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 

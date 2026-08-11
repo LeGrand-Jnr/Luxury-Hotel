@@ -952,18 +952,15 @@ footer p {
 }
 
 .admin-dashboard {
-  background: var(--cream);
-  border-radius: 24px;
-  border: 1px solid var(--line);
-  padding: 30px;
-  box-shadow: 0 14px 40px var(--shadow);
+  background: #eef4ee;
+  padding: 26px;
 }
 
 .admin-dashboard-top {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 22px;
   border-bottom: 1px solid var(--line);
   padding-bottom: 24px;
   margin-bottom: 24px;
@@ -972,20 +969,311 @@ footer p {
 .admin-dashboard-top h1 {
   margin: 0;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.72rem, 3.4vw, 2.28rem);
+  font-size: clamp(2rem, 4vw, 2.65rem);
   color: var(--brand-deep);
 }
 
-.logout-button {
-  background: #38593a;
-  color: #fffdf8;
-  border-radius: 999px;
-  padding: 12px 28px;
+.admin-dashboard-layout {
+  display: flex;
+  gap: 26px;
+}
+
+.admin-sidebar {
+  width: 250px;
+  flex: 0 0 250px;
+  background: var(--brand-deep);
+  border-radius: 20px;
+  padding: 20px 16px;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.admin-nav-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 12px;
+  border-radius: 12px;
+  color: #eee8dd;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.admin-nav-card.active {
+  background: var(--brand);
+  color: var(--brand-deep);
+}
+
+.admin-nav-icon {
+  font-size: 1rem;
+}
+
+.admin-content {
+  flex: 1;
+}
+
+.admin-panel-block {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.panel-header.compact {
+  align-items: end;
+}
+
+.panel-header h2 {
+  margin: 4px 0 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  color: var(--brand-deep);
+}
+
+.secondary-button,
+.primary-button {
   border: none;
+  border-radius: 999px;
+  padding: 11px 24px;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 0.12em;
+}
+
+.secondary-button {
+  background: #e8e1d4;
+  color: var(--brand-deep);
+}
+
+.primary-button {
+  background: var(--brand-deep);
+  color: white;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  background: #233b2f;
+  color: #fff;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px;
+  text-align: left;
+}
+
+.admin-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e1d5;
+  color: #304337;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: #eee0ba;
+  color: #6b5221;
+}
+
+.status-confirmed {
+  background: #ccdaca;
+  color: #234534;
+}
+
+.status-checked-in {
+  background: #b1d7bf;
+  color: #194d2a;
+}
+
+.status-completed {
+  background: #cfcfcf;
+  color: #405050;
+}
+
+.status-cancelled {
+  background: #e9d7d3;
+  color: #7b3a35;
+}
+
+.action-button,
+.danger-button {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.72rem;
   font-weight: 800;
   cursor: pointer;
 }
 
-.admin-dashboard[hidden] {
+.action-button {
+  background: #b38a45;
+  color: #fff;
+}
+
+.danger-button {
+  background: #895a39;
+  color: #fff;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.room-card {
+  background: #fbfaf8;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  padding: 16px;
+}
+
+.room-card h3 {
+  margin-top: 0;
+  color: var(--brand-deep);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.room-card .room-status {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.room-card .room-select {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message-card {
+  background: #fafaf7;
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid #ddd9cd;
+}
+
+.message-card h3 {
+  margin: 0 0 6px;
+  font-size: 0.98rem;
+  color: var(--brand-deep);
+}
+
+.message-card p {
+  margin: 8px 0;
+  color: var(--text-muted);
+}
+
+.message-card .message-date {
+  font-size: 0.74rem;
+  color: #776d54;
+  font-weight: 700;
+}
+
+.admin-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 34, 22, 0.82);
   display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.admin-modal.open {
+  display: flex;
+}
+
+.admin-modal-card {
+  width: min(820px, 100%);
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid var(--line);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: var(--brand-deep);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--brand-deep);
+  cursor: pointer;
+}
+
+.admin-reservation-form .form-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.admin-reservation-form .form-group {
+  flex: 1;
+}
+
+.admin-reservation-form .full-width {
+  width: 100%;
+}
+
+.admin-reservation-form label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+  color: var(--sage);
+}
+
+.admin-reservation-form input,
+.admin-reservation-form select,
+.admin-reservation-form textarea {
+  width: 100%;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
 }
