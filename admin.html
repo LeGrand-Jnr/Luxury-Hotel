@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard – Luxury Hotel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Admin Dashboard</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+      </ul>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+  </header>
+
+  <section class="features">
+    <h2>Manage Reservations</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Guest Name</th>
+          <th>Email</th>
+          <th>Check-in</th>
+          <th>Check-out</th>
+          <th>Room Type</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jane Doe</td>
+          <td>jane@example.com</td>
+          <td>2025-08-15</td>
+          <td>2025-08-18</td>
+          <td>Deluxe</td>
+          <td>Pending</td>
+          <td>
+            <button>Confirm</button>
+            <button>Edit</button>
+            <button>Cancel</button>
+          </td>
+        </tr>
+        <!-- More rows -->
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Luxury Hotel. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
