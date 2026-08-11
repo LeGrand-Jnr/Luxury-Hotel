@@ -9,38 +9,74 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">Luxury Hotel</div>
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Luxury Hotel Logo" class="logo-img" />
+        Luxury Hotel
+      </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
         <li><a href="admin.html">Admin</a></li>
       </ul>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </nav>
   </header>
 
-  <section class="contact">
+  <section class="reservation-section">
     <h2>Make a Reservation</h2>
-    <form id="reservationForm" method="" action="">
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="tel" placeholder="Phone" required />
-      <label>Check-in Date:</label>
-      <input type="date" required />
-      <label>Check-out Date:</label>
-      <input type="date" required />
-      <select required>
-        <option value="">Select Room Type</option>
-        <option value="standard">Standard</option>
-        <option value="deluxe">Deluxe</option>
-        <option value="suite">Suite</option>
-      </select>
-      <input type="number" placeholder="Number of Guests" required />
-      <button type="submit">Confirm Reservation</button>
-    </form>
+    <div class="reservation-wrap">
+      <form class="reservation-form" id="reservationForm" method="" action="">
+        <div class="full">
+          <label for="guestName">Full Name</label>
+          <input id="guestName" type="text" placeholder="Full Name" required />
+        </div>
+        <div>
+          <label for="email">Email Address</label>
+          <input id="email" type="email" placeholder="Email" required />
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="tel" placeholder="Phone" required />
+        </div>
+        <div>
+          <label for="checkinDate">Check-in Date</label>
+          <input id="checkinDate" type="date" required />
+        </div>
+        <div>
+          <label for="checkoutDate">Check-out Date</label>
+          <input id="checkoutDate" type="date" required />
+        </div>
+        <div>
+          <label for="roomType">Room Type</label>
+          <select id="roomType" required>
+            <option value="">Select Room Type</option>
+            <option value="standard">Standard</option>
+            <option value="deluxe">Deluxe</option>
+            <option value="suite">Suite</option>
+          </select>
+        </div>
+        <div>
+          <label for="guests">Guests</label>
+          <input id="guests" type="number" placeholder="Number of Guests" required />
+        </div>
+        <div class="reservation-button full">
+          <button type="submit">Confirm Reservation</button>
+        </div>
+      </form>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Luxury Hotel. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">Luxury Hotel</div>
+      <div class="social-links">
+        <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
+      </div>
+      <p>&copy; 2025 Luxury Hotel. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>

@@ -9,7 +9,6 @@
 <body>
   <header>
     <nav class="navbar">
-      
       <div class="logo">
         <img src="images/logo.jpg" alt="Luxury Hotel Logo" class="logo-img" />
         Luxury Hotel
@@ -17,6 +16,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="#features">Amenities</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="reservations.html">Reservations</a></li>
@@ -27,20 +27,50 @@
   </header>
 
   <section class="hero" style="background-image: url('images/view1.jpg');">
-    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Experience Luxury & Comfort</h1>
-      <p>Your escape awaits at our serene hotel retreat.</p>
-      <a href="reservations.html" class="cta-button">Book Now</a>
+      <p>Your refined urban retreat, crafted for exceptional moments.</p>
+      <a href="reservations.html" class="cta-button">Book Your Stay</a>
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>36</strong>
+          <span>Signature Rooms</span>
+        </div>
+        <div class="stat">
+          <strong>03</strong>
+          <span>Dining Concepts</span>
+        </div>
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>Concierge Service</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="story-layout">
+      <div class="story-image">
+        <img src="images/reception.jpg" alt="Luxury Hotel Reception" />
+      </div>
+      <div class="story-copy">
+        <h2>A destination shaped for exceptional living.</h2>
+        <p>Luxury Hotel brings together thoughtful hospitality, elegant design, and world-class comfort in the heart of the city. Every detail is prepared to help guests relax, recharge, and celebrate life beautifully.</p>
+        <p>From sunrise coffee to evening dining, our spaces are designed to bring together excellence, warmth, and complete attention to service.</p>
+        <div class="signature">The Luxury Hotel Collection</div>
+      </div>
     </div>
   </section>
 
   <section id="features" class="features">
-    <h2>Our Facilities</h2>
+    <div class="section-heading">
+      <h2>Our Facilities</h2>
+      <p>Discover a refined collection of spaces curated for comfort, celebration, and meaningful connection.</p>
+    </div>
     <div class="feature-grid">
       <div class="feature">
         <img src="images/singlebed.jpg" alt="Bedroom" />
-        <span>Bedrooms</span>
+        <span>Executive Bedrooms</span>
       </div>
       <div class="feature">
         <img src="images/conferencehall.jpg" alt="Conference Hall" />
@@ -52,7 +82,7 @@
       </div>
       <div class="feature">
         <img src="images/carpark.jpg" alt="car park" />
-        <span>Car Park</span>
+        <span>Private Car Park</span>
       </div>
       <div class="feature">
         <img src="images/food.jpg" alt="Restaurant & Bar" />
@@ -69,22 +99,43 @@
     </div>
   </section>
 
+  <section id="experience" class="experience">
+    <div class="section-heading">
+      <h2>Signature Experiences</h2>
+      <p>Every stay is enhanced through thoughtful service, elegant details, and immersive hospitality.</p>
+    </div>
+    <div class="experience-grid">
+      <article class="experience-card">
+        <h3>Executive Dining</h3>
+        <p>Seasonal menus, curated wine pairings, and graceful service in a welcoming restaurant experience.</p>
+      </article>
+      <article class="experience-card">
+        <h3>Rest & Renewal</h3>
+        <p>Our wellness and spa spaces bring calm, rejuvenation, and contemporary restorative care.</p>
+      </article>
+      <article class="experience-card">
+        <h3>Private Events</h3>
+        <p>From intimate gatherings to business functions, our teams prepare beautifully managed occasions.</p>
+      </article>
+    </div>
+  </section>
+
   <section id="testimonials" class="testimonials">
     <h2>Guest Reviews</h2>
     <div class="testimonial-slider">
       <div class="testimonial active">
         <img src="images/guest1.jpg" alt="Jane D." />
-        <p>"Absolutely stunning experience!"</p>
+        <p>“Absolutely stunning experience — elegant, peaceful, and perfectly managed.”</p>
         <span>– Jane D.</span>
       </div>
       <div class="testimonial">
         <img src="images/guest2.jpg" alt="Kwame A." />
-        <p>"The staff were incredibly welcoming."</p>
+        <p>“The staff were incredibly welcoming, helpful, and professional throughout our stay.”</p>
         <span>– Kwame A.</span>
       </div>
       <div class="testimonial">
         <img src="images/guest3.jpg" alt="Linda S." />
-        <p>"The food and amenities were top-notch."</p>
+        <p>“The food, atmosphere, and amenities made our visit truly memorable.”</p>
         <span>– Linda S.</span>
       </div>
       <button class="testimonial-prev" onclick="prevTestimonial()">&#10094;</button>
@@ -116,12 +167,15 @@
   </section>
 
   <footer>
-    <div class="social-links">
-      <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
-      <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
-      <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
+    <div class="footer-inner">
+      <div class="footer-brand">Luxury Hotel</div>
+      <div class="social-links">
+        <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
+      </div>
+      <p>&copy; 2025 Luxury Hotel. All rights reserved.</p>
     </div>
-    <p>&copy; 2025 Luxury Hotel. All rights reserved.</p>
   </footer>
 
   <button id="scrollTopBtn" title="Go to top">&#8679;</button>

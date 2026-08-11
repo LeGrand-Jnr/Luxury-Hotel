@@ -9,50 +9,90 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">Admin Dashboard</div>
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Luxury Hotel Logo" class="logo-img" />
+        Luxury Hotel
+      </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
         <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="admin.html">Admin</a></li>
       </ul>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </nav>
   </header>
 
-  <section class="features">
+  <section class="admin-section">
     <h2>Manage Reservations</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Guest Name</th>
-          <th>Email</th>
-          <th>Check-in</th>
-          <th>Check-out</th>
-          <th>Room Type</th>
-          <th>Status</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Jane Doe</td>
-          <td>jane@example.com</td>
-          <td>2025-08-15</td>
-          <td>2025-08-18</td>
-          <td>Deluxe</td>
-          <td>Pending</td>
-          <td>
-            <button>Confirm</button>
-            <button>Edit</button>
-            <button>Cancel</button>
-          </td>
-        </tr>
-        <!-- More rows -->
-      </tbody>
-    </table>
+    <div class="admin-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Guest Name</th>
+            <th>Email</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>Room Type</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jane Doe</td>
+            <td>jane@example.com</td>
+            <td>2025-08-15</td>
+            <td>2025-08-18</td>
+            <td>Deluxe</td>
+            <td>Pending</td>
+            <td>
+              <button class="action-button">Confirm</button>
+              <button class="action-button">Edit</button>
+              <button class="action-button danger">Cancel</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Kwame Mensah</td>
+            <td>kwame@example.com</td>
+            <td>2025-09-01</td>
+            <td>2025-09-03</td>
+            <td>Suite</td>
+            <td>Confirmed</td>
+            <td>
+              <button class="action-button">Confirm</button>
+              <button class="action-button">Edit</button>
+              <button class="action-button danger">Cancel</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Linda Smith</td>
+            <td>linda@example.com</td>
+            <td>2025-10-02</td>
+            <td>2025-10-06</td>
+            <td>Standard</td>
+            <td>Pending</td>
+            <td>
+              <button class="action-button">Confirm</button>
+              <button class="action-button">Edit</button>
+              <button class="action-button danger">Cancel</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Luxury Hotel. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">Luxury Hotel</div>
+      <div class="social-links">
+        <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
+      </div>
+      <p>&copy; 2025 Luxury Hotel. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>

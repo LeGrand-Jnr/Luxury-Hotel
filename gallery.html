@@ -9,10 +9,15 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">Luxury Hotel</div>
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Luxury Hotel Logo" class="logo-img" />
+        Luxury Hotel
+      </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
+        <li><a href="#">Gallery</a></li>
         <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="admin.html">Admin</a></li>
       </ul>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </nav>
@@ -21,16 +26,25 @@
   <section class="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
-      <img src="room.jpg" alt="Room" />
-      <img src="pool.jpg" alt="Pool" />
-      <img src="restaurant.jpg" alt="Restaurant" />
-      <img src="spa.jpg" alt="Spa" />
-      <img src="event.jpg" alt="Event" />
+      <img src="images/singlebed.jpg" alt="Executive suite" />
+      <img src="images/swimmingpool.jpg" alt="Swimming pool" />
+      <img src="images/food.jpg" alt="Restaurant experience" />
+      <img src="images/massageroom.jpg" alt="Spa retreat" />
+      <img src="images/reception.jpg" alt="Grand reception" />
+      <img src="images/conferencehall2.jpg" alt="Event and conference area" />
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Luxury Hotel. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-brand">Luxury Hotel</div>
+      <div class="social-links">
+        <a href="#"><img src="images/facebook.png" alt="Facebook" /></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
+      </div>
+      <p>&copy; 2025 Luxury Hotel. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
